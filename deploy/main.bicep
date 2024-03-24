@@ -1,5 +1,5 @@
 @description('The location into which your Azure resources should be deployed.')
-param location string = resourceGroup().location
+param location string = 'westus'
 
 @description('Select the type of environment you want to provision. Allowed values are Production and Test.')
 @allowed([
@@ -17,7 +17,7 @@ var appServiceAppName = 'toy-website-${resourceNameSuffix}'
 var appServicePlanName = 'toy-website'
 var logAnalyticsWorkspaceName = 'workspace-${resourceNameSuffix}'
 var applicationInsightsName = 'toywebsite'
-var storageAccountName = 'mystorageresourceNameSuffix'
+var storageAccountName = 'mystorage${resourceNameSuffix}'
 
 // Define the SKUs for each component based on the environment type.
 var environmentConfigurationMap = {
